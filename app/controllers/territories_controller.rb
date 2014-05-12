@@ -1,0 +1,3 @@
+class TerritoriesController < ApplicationController
+
+end
