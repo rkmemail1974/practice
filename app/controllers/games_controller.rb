@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    $neighbors = { "101" => ["102", "106", "506"],
+    @neighbors = { "101" => ["102", "106", "506"],
                     "102" => ["101", "106", "107", "109"],
                     "103"=> ["104", "109", "204"],
                     "104" => ["103", "108", "107", "109"],
@@ -45,6 +45,14 @@ class GamesController < ApplicationController
         end
   end
 
+    def isNeighbor?(geostate1, geostate2)
+        if @neigbors[geostate1.to_s].include?(geostate2.to_s)
+            return true
+        else
+            return false
+        end
+    end
+    
   def getQueuedGame
     if ($queuedGame.nil?)
       $queuedGame = Game.create

@@ -32,6 +32,7 @@
 	gameChannel.bind('count', function(count) {
 	  $('div#message').text('Number of players in queue: ' + count.amount);
 	});
+ 
 	gameChannel.bind('state', function(data) {
     
 	  if (data.player_id == <%= @player.id =%>)
